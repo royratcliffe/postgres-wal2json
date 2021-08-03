@@ -37,7 +37,7 @@ Swap `get` for `peek` in order to read any changes non-destructively. Changes ap
 
 Build the image locally from your shell.
 ```sh
-docker build --pull --rm -f "Dockerfile" -t postgres-wal2json:latest
+docker build --pull --rm -f "Dockerfile" -t postgres-wal2json:latest "."
 ```
 Then you can deploy it, adding the `wal_level` configuration. Note the order of the arguments. Order matters.
 ```sh

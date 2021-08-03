@@ -47,5 +47,6 @@ docker run --rm -d -e POSTGRES_HOST_AUTH_METHOD=trust -p 5432:5432/tcp postgres-
 ## References
 
 * [Official Image for postgres](https://hub.docker.com/_/postgres)
+* [Git repo of the Docker "Official Image" for postgres](https://github.com/docker-library/postgres)
 * [wal2json](https://github.com/eulerto/wal2json)
 * [pg_replication_slots](https://www.postgresql.org/docs/current/view-pg-replication-slots.html)

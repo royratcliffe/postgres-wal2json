@@ -1,5 +1,7 @@
 # postgres-wal2json
 
+## Motivation
+
 Builds a PostgreSQL image for Docker based on the official image but with the `wal2json` extension installed. This allows you to configure PostgreSQL for `wal_level` of `logical` and thereafter create a logical replication slot.
 
 ```sql
@@ -29,6 +31,17 @@ Swap `get` for `peek` in order to read any changes non-destructively. Changes ap
     }
   ]
 }
+```
+
+## Usage
+
+Build the image locally from your shell.
+```sh
+docker build --pull --rm -f "Dockerfile" -t postgres-wal2json:latest
+```
+Then you can deploy it, adding the `wal_level` configuration. Note the order of the arguments. Order matters.
+```sh
+docker run --rm -d -e POSTGRES_HOST_AUTH_METHOD=trust -p 5432:5432/tcp postgres-wal2json:latest -c wal_level=logical
 ```
 
 ## References

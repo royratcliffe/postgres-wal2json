@@ -39,13 +39,13 @@ Build the image locally from your shell.
 ```sh
 docker build --pull --rm -f "Dockerfile" -t postgres-wal2json:latest
 ```
-Then you can deploy it, adding the `wal_level` configuration. Note the order of the arguments. Order matters.
+Then you can deploy it, adding the `wal_level` configuration. Note the order of the arguments. Order matters in this case because the `-c` argument passes to the Docker entry-point.
 ```sh
 docker run --rm -d -e POSTGRES_HOST_AUTH_METHOD=trust -p 5432:5432/tcp postgres-wal2json:latest -c wal_level=logical
 ```
 
 ## References
 
-* [Official Image](https://hub.docker.com/_/postgres)
+* [Official Image for postgres](https://hub.docker.com/_/postgres)
 * [wal2json](https://github.com/eulerto/wal2json)
 * [pg_replication_slots](https://www.postgresql.org/docs/current/view-pg-replication-slots.html)
